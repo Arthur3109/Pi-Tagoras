@@ -3,11 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/dd1d2b7bc0.js" crossorigin="anonymous"></script>
-    <title>π-Tágoras-EQUIPE</title>
-    <link rel="shortcut icon" href="Imagem/LogoPi.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/dd1d2b7bc0.js" crossorigin="anonymous"></script>
+  <title>π-Tágoras-EQUIPE</title>
+  <link rel="shortcut icon" href="Imagem/LogoPi.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
+  <script src="translation.js"></script> 
 </head>
 
 <body>
@@ -23,183 +25,158 @@
 
     <nav class="main-nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="produtos.html">Equipes</a></li>
-        <li><a href="contato.html">Contato</a></li>
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="sobre.html" data-i18n="nav_about">Sobre Nós</a></li>
+        <li><a href="produtos.html" data-i18n="nav_teams">Equipes</a></li>
+        <li><a href="contato.html" data-i18n="nav_contact">Contato</a></li>
       </ul>
     </nav>
+
+    <div class="language-switcher">
+      <button onclick="setLanguage('pt')">
+        <span class="flag-icon flag-icon-br"></span>
+      </button>
+      <button onclick="setLanguage('en')">
+        <span class="flag-icon flag-icon-us"></span>
+      </button>
+      <button onclick="setLanguage('es')">
+        <span class="flag-icon flag-icon-es"></span>
+      </button>
+    </div>
   </header>
 
   <section id="produtos">
-    <h2>Nossas Equipes de <span>Pensadores</span></h2>
-    <p>Escolha um dos grupos abaixo para ver os 6 pilares de conhecimento que guiam nossa consultoria:</p>
+    <h2 data-i18n="teams_title">Nossas Equipes de <span>Pensadores</span></h2>
+    <p data-i18n="teams_subtitle">Escolha um dos grupos abaixo para ver os 6 pilares de conhecimento que guiam nossa consultoria:</p>
 
-    <div class="time-filosofico" id="time-grego">
-      <h3>Time Grego 🧠</h3>
-      <p class="time-descricao">Os pioneiros: a base do raciocínio crítico, da lógica e do autoconhecimento.</p>
+    <div class="time-filosofico time-grego" id="time-grego">
+      <h3 data-i18n="team_grego_title">Time Grego 🧠</h3>
+      <p class="time-descricao" data-i18n="team_grego_desc">Os pioneiros: a base do raciocínio crítico, da lógica e do autoconhecimento.</p>
       <div class="cartoes-container">
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="socrates-img">
-              <h4>Sócrates</h4>
+              
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Pai da filosofia ocidental; criador do método socrático.</p>
-              <p class="frase">"Só sei que nada sei."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="socrates_desc"></p> <p class="frase" data-i18n="socrates_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="platao-img">
-              <h4>Platão</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Fundador da Academia; ideias sobre o Mundo das Ideias.</p>
-              <p class="frase">"O não examinado não vale a pena ser vivido."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="platao_desc"></p> <p class="frase" data-i18n="platao_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="aristoteles-img">
-              <h4>Aristóteles</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Discípulo de Platão; base da lógica e da ciência.</p>
-              <p class="frase">"A felicidade é o significado e o propósito da vida."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="aristoteles_desc"></p> <p class="frase" data-i18n="aristoteles_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="heraclito-img">
-              <h4>Heráclito</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">"Tudo flui"; destacou a mudança constante do mundo.</p>
-              <p class="frase">"Ninguém pode entrar duas vezes no mesmo rio."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="heraclito_desc"></p> <p class="frase" data-i18n="heraclito_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="pitagoras-img">
-              <h4>Pitágoras</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Ligou matemática e filosofia espiritual.</p>
-              <p class="frase">"Os números governam o universo."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="pitagoras_desc"></p> <p class="frase" data-i18n="pitagoras_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="epicuro-img">
-              <h4>Epicuro</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Defendeu o prazer moderado e a ausência de dor.</p>
-              <p class="frase">"Não é o que temos, mas o que desfrutamos, que constitui a nossa abundância."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="epicuro_desc"></p> <p class="frase" data-i18n="epicuro_frase"></p> </div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <div class="time-filosofico" id="time-romano">
-      <h3>Time Romano ⚖️</h3>
-      <p class="time-descricao">Os mestres da sabedoria aplicada à vida real: virtude, ética e controle emocional.</p>
+    <div class="time-filosofico time-romano" id="time-romano">
+      <h3 data-i18n="team_romano_title">Time Romano ⚖️</h3>
+      <p class="time-descricao" data-i18n="team_romano_desc">Os mestres da sabedoria aplicada à vida real: virtude, ética e controle emocional.</p>
       <div class="cartoes-container">
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="seneca-img">
-              <h4>Sêneca</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Filósofo estoico; ensinou sobre virtude e controle emocional.</p>
-              <p class="frase">"Nós sofremos mais na imaginação do que na realidade."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="seneca_desc"></p> <p class="frase" data-i18n="seneca_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="cicero-img">
-              <h4>Cícero</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Grande orador e defensor da ética política.</p>
-              <p class="frase">"A amizade torna a prosperidade mais brilhante e atenua a adversidade, dividindo-a e
-                compartilhando-a."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="cicero_desc"></p> <p class="frase" data-i18n="cicero_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="marcoaurelio-img">
-              <h4>Marco Aurélio</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Imperador estoico; autor de Meditações.</p>
-              <p class="frase">"Não perca mais tempo discutindo o que um bom homem deve ser. Seja um."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="marcoaurelio_desc"></p> <p class="frase" data-i18n="marcoaurelio_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="epicteto-img">
-              <h4>Epicteto</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Escravo liberto; ensinou que só controlamos nossas atitudes.</p>
-              <p class="frase">"Não são as coisas que nos incomodam, mas o nosso julgamento sobre elas."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="epicteto_desc"></p> <p class="frase" data-i18n="epicteto_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="lucrecio-img">
-              <h4>Lucrécio</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Poeta e seguidor do epicurismo; escreveu Da Natureza das Coisas.</p>
-              <p class="frase">"O que é alimento para uns, é veneno amargo para outros."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="lucrecio_desc"></p> <p class="frase" data-i18n="lucrecio_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="plotino-img">
-              <h4>Plotino</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Criador do neoplatonismo; influenciou o pensamento cristão.</p>
-              <p class="frase">"A beleza está na ausência de necessidade."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="plotino_desc"></p> <p class="frase" data-i18n="plotino_frase"></p> </div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <div class="time-filosofico" id="time-alemao">
-      <h3>Time Alemão ⚙️</h3>
-      <p class="time-descricao">Os estrategistas do pensamento: profundidade conceitual, idealismo e crítica radical.
-      </p>
+    <div class="time-filosofico time-alemao" id="time-alemao">
+      <h3 data-i18n="team_alemao_title">Time Alemão ⚙️</h3>
+      <p class="time-descricao" data-i18n="team_alemao_desc">Os estrategistas do pensamento: profundidade conceitual, idealismo e crítica radical.</p>
       <div class="cartoes-container">
 
         <div class="flip-card">
@@ -208,9 +185,7 @@
               <h4>Immanuel Kant</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Fundador do idealismo crítico; Crítica da Razão Pura.</p>
-              <p class="frase">"Ouse saber! (Sapere aude.)"</p>
-            </div>
+              <p class="descricao-curta" data-i18n="kant_desc"></p> <p class="frase" data-i18n="kant_frase"></p> </div>
           </div>
         </div>
 
@@ -220,9 +195,7 @@
               <h4>Georg Hegel</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Desenvolveu a dialética; influenciou Marx.</p>
-              <p class="frase">"O real é racional e o racional é real."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="hegel_desc"></p> <p class="frase" data-i18n="hegel_frase"></p> </div>
           </div>
         </div>
 
@@ -232,9 +205,7 @@
               <h4>Arthur Schopenhauer</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Filosofia do pessimismo e da vontade.</p>
-              <p class="frase">"A vida humana oscila como um pêndulo, de um lado para a dor, do outro para o tédio."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="schopenhauer_desc"></p> <p class="frase" data-i18n="schopenhauer_frase"></p> </div>
           </div>
         </div>
 
@@ -244,9 +215,7 @@
               <h4>Friedrich Nietzsche</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">"Deus está morto"; crítica à moral tradicional.</p>
-              <p class="frase">"Quem luta com monstros deve se precaver para não se tornar um monstro."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="nietzsche_desc"></p> <p class="frase" data-i18n="nietzsche_frase"></p> </div>
           </div>
         </div>
 
@@ -256,10 +225,7 @@
               <h4>Karl Marx</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Criador do materialismo histórico e do comunismo.</p>
-              <p class="frase">"Os filósofos limitaram-se a interpretar o mundo de diversas maneiras; o que importa é
-                modificá-lo."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="marx_desc"></p> <p class="frase" data-i18n="marx_frase"></p> </div>
           </div>
         </div>
 
@@ -269,18 +235,16 @@
               <h4>Martin Heidegger</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Estudou o "ser" e a existência humana (Ser e Tempo).</p>
-              <p class="frase">"A linguagem é a casa do ser."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="heidegger_desc"></p> <p class="frase" data-i18n="heidegger_frase"></p> </div>
           </div>
         </div>
 
       </div>
     </div>
-
-    <div class="time-filosofico" id="time-brasil">
-      <h3>Time Brasileiro 🌎</h3>
-      <p class="time-descricao">Os pensadores da prática: filosofia com impacto social, política e educacional.</p>
+    
+    <div class="time-filosofico time-brasil" id="time-brasil">
+      <h3 data-i18n="team_brasil_title">Time Brasileiro 🌎</h3>
+      <p class="time-descricao" data-i18n="team_brasil_desc">Os pensadores da prática: filosofia com impacto social, política e educacional.</p>
       <div class="cartoes-container">
 
         <div class="flip-card">
@@ -289,10 +253,7 @@
               <h4>Paulo Freire</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Filósofo e educador; autor de Pedagogia do Oprimido.</p>
-              <p class="frase">"Se a educação sozinha não transforma a sociedade, sem ela tampouco a sociedade muda."
-              </p>
-            </div>
+              <p class="descricao-curta" data-i18n="freire_desc"></p> <p class="frase" data-i18n="freire_frase"></p> </div>
           </div>
         </div>
 
@@ -302,9 +263,7 @@
               <h4>Marilena Chauí</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Defensora da filosofia crítica e da democracia.</p>
-              <p class="frase">"Ser de esquerda é ter a coragem de ser a favor da igualdade."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="chaui_desc"></p> <p class="frase" data-i18n="chaui_frase"></p> </div>
           </div>
         </div>
 
@@ -314,34 +273,27 @@
               <h4>Leandro Konder</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Marxista; escreveu sobre alienação e política.</p>
-              <p class="frase">"Alienar-se é esquecer-se de si mesmo."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="konder_desc"></p> <p class="frase" data-i18n="konder_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="pradojr-img">
-              <h4>Bento Prado Jr.</h4>
+              <h4>Caio Prado Júnior</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Estudou a relação entre filosofia e linguagem.</p>
-              <p class="frase">"O pensamento só se faz na linguagem, e a linguagem é um pensamento que se faz a si
-                mesmo."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="pradojr_desc"></p> <p class="frase" data-i18n="pradojr_frase"></p> </div>
           </div>
         </div>
 
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front" id="unger-img">
-              <h4>Roberto M. Unger</h4>
+              <h4>Roberto Mangabeira Unger</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Filósofo e político, conhecido no exterior.</p>
-              <p class="frase">"Devemos ser capazes de reinventar o futuro e não apenas gerenciar o passado."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="unger_desc"></p> <p class="frase" data-i18n="unger_frase"></p> </div>
           </div>
         </div>
 
@@ -351,65 +303,52 @@
               <h4>Miguel Reale</h4>
             </div>
             <div class="flip-card-back">
-              <p class="descricao-curta">Criador da teoria tridimensional do Direito (fato, valor, norma).</p>
-              <p class="frase">"O Direito é a conjugação do Fato, do Valor e da Norma."</p>
-            </div>
+              <p class="descricao-curta" data-i18n="reale_desc"></p> <p class="frase" data-i18n="reale_frase"></p> </div>
           </div>
         </div>
 
       </div>
     </div>
+
   </section>
+  
   <footer>
-        <div class="footer-container">
-            <div class="footer-col about-col">
-                <h3>PITÁGORAS</h3>
-
-                <p><strong>Filosofia para uma vida mais Sábia.</strong></p>
-
-                <p>Endereço: Rua Exemplo, 123 - Cidade/Estado</p>
-
-                <p class="copyright">
-                    &copy; 2025 Pitágoras - Todos os direitos reservados.
-                </p>
-            </div>
-
-            <div class="footer-col links-col">
-                <h4>Navegação</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#areas">Áreas de Consultoria</a></li>
-                    <li><a href="#etica">Ética e Pilares</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col contact-col">
-                <h4>Fale Conosco</h4>
-
-                <p>Email: <a href="mailto:contato@pitagoras.com">contato@pitagoras.com</a></p>
-                <p>Telefone: (11) 1234-5678</p>
-
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+    <div class="container-footer">
+      <div class="footer-col about-col">
+        <div class="logo">
+          <h1>π-Tágoras</h1>
         </div>
-    </footer>
+        <p class="slogan" data-i18n="footerSlogan"><strong>Filosofia para uma vida mais Sábia.</strong></p> 
+        <p data-i18n="footerAddress">Endereço: Rua Exemplo, 123 - Cidade/Estado</p>
+        <p class="copyright" data-i18n="footerCopy">
+          &copy; 2025 Pitágoras - Todos os direitos reservados.
+        </p>
+      </div>
 
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.main-nav');
+      <div class="footer-col links-col">
+        <h4 data-i18n="footerNavTitle">Navegação</h4>
+        <ul>
+          <li><a href="#home" data-i18n="footerLinkHome">Home</a></li>
+          <li><a href="#sobre" data-i18n="footerLinkSobre">Sobre Nós</a></li>
+          <li><a href="#areas" data-i18n="footerLinkAreas">Áreas de Consultoria</a></li>
+          <li><a href="#etica" data-i18n="footerLinkEtica">Ética e Pilares</a></li>
+          <li><a href="#contato" data-i18n="footerLinkContato">Contato</a></li>
+        </ul>
+      </div>
 
-    menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-  </script>
-  <script src="translation.js"></script>
-  <script src="Tradutor.JS"></script>
+      <div class="footer-col contact-col">
+        <h4 data-i18n="footerContactTitle">Fale Conosco</h4>
+        <p data-i18n="footerEmail">Email: contato@pitagoras.com</p>
+        <p data-i18n="footerPhone">Telefone: (11) 1234-5678</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 
 </html>

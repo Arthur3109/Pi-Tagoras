@@ -40,20 +40,20 @@ h2 {
 }
 
 header {
-    background-color: var(--azul-marinho);
-    color: #FFFFFF;
+    background-color: var(--cinza-claro);
+    color: var(--azul-marinho);
     padding: 15px 5%;
     display: flex;
     justify-content: space-between; /* Alinha logo à esquerda e nav/bandeiras à direita */
     align-items: center;
     position: relative;
-    z-index: 1000;
+    z-index: 1000 !important;
 }
 
 header .logo h1 {
     font-size: 1.8em;
     font-weight: 700;
-    color: var(--branco);
+    color: var(--azul-marinho);
     /* Se a logo PITÁGORAS for um texto */
 }
 
@@ -1455,6 +1455,9 @@ footer h3, footer h4 {
 /* =======================================================
    ESTILIZAÇÃO GERAL DA PÁGINA PRODUTOS/EQUIPES
    ======================================================= */
+/* =======================================================
+   SEÇÃO PRODUTOS (MANUTENÇÃO)
+   ======================================================= */
 #produtos {
     padding: 80px 5%;
     text-align: center;
@@ -1497,14 +1500,15 @@ footer h3, footer h4 {
 }
 
 
-/* Container de Cards (Grid de 3 colunas) */
+/* Container de Cards (Grid) */
 .cartoes-container {
     display: grid;
-    /* 3 Colunas no desktop para acomodar 6 cards por time em 2 linhas */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 25px;
-    max-width: 1200px;
+    /* Alterado para 4 colunas em telas maiores para cards menores/melhores */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Reduzido o gap para 20px */
+    max-width: 1280px; /* Aumentado um pouco o max-width */
     margin: 0 auto;
+    padding: 0 10px; /* Pequeno padding para evitar que encoste nas bordas da tela */
 }
 
 /* =======================================================
@@ -1512,9 +1516,10 @@ footer h3, footer h4 {
    ======================================================= */
 .flip-card {
     background-color: transparent;
-    width: 100%;
-    height: 250px; /* Altura fixa para manter o grid uniforme */
-    perspective: 1000px; /* Define o quão 3D o efeito será */
+    width: 400px;
+    /* CORREÇÃO PRINCIPAL: Altura do card reduzida para 350px */
+    height: 400px; 
+    perspective: 1000px; 
     cursor: pointer;
 }
 
@@ -1523,8 +1528,8 @@ footer h3, footer h4 {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s; /* Duração da animação de virada */
-    transform-style: preserve-3d; /* CRÍTICO: Permite o efeito 3D */
+    transition: transform 0.8s; 
+    transform-style: preserve-3d; 
 }
 
 /* O EFEITO DE VIRAR (HOVER) */
@@ -1536,11 +1541,11 @@ footer h3, footer h4 {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Esconde a face traseira antes de virar */
+    -webkit-backface-visibility: hidden; 
     backface-visibility: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 25px;
+    padding: 20px; /* Reduzido o padding para 20px */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1549,25 +1554,30 @@ footer h3, footer h4 {
 
 /* FACE FRONTAL (IMAGEM) */
 .flip-card-front {
-    background-color: var(--cinza-claro); 
+    background-color: var(--branco); 
     color: var(--azul-marinho);
-    background-size: cover;
-    background-position: center top;
+    
+    /* MUDANÇA PRINCIPAL: Usa 'contain' para garantir que a imagem inteira apareça. 
+       Pode haver espaço vazio nas laterais ou no topo/base, mas a figura não será cortada. */
+    background-size: contain; 
+    
+    /* Centraliza a imagem no espaço do card (horizontal e verticalmente) */
+    background-position: center; 
+    
     background-repeat: no-repeat;
-    /* A cor da fonte está aqui, mas o background do H4 é que garante a leitura */
 }
 
 .flip-card-front h4 {
-    font-size: 1.5em;
+    font-size: 1.4em; /* Levemente reduzido */
     position: absolute; 
-    bottom: 0; /* Nome do filósofo na parte inferior da imagem */
+    bottom: 0; 
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.85); /* Fundo semi-transparente claro para o nome */
+    background: rgba(255, 255, 255, 0.85); 
     color: var(--azul-marinho);
-    padding: 10px 5px;
+    padding: 8px 5px; /* Levemente reduzido */
     margin: 0;
-    border-radius: 0 0 10px 10px; /* Arredonda só embaixo */
+    border-radius: 0 0 10px 10px; 
 }
 
 /* FACE TRASEIRA (TEXTO/DESCRIÇÃO) */
@@ -1583,45 +1593,66 @@ footer h3, footer h4 {
     font-size: 0.9em;
     line-height: 1.4;
     margin-bottom: 15px;
-    color: var(--branco); /* Descrição em cor clara */
+    color: var(--branco); 
 }
 
 .flip-card-back .frase {
-    font-size: 1.25em;
+    font-size: 1.2em; /* Levemente reduzido */
     font-style: italic;
     font-weight: 500;
     line-height: 1.4;
-    color: var(--destaque-verde); /* Citação em cor de destaque */
+    color: var(--destaque-verde); 
 }
 
 
 /* =======================================================
-   REGRAS DE IMAGENS POR ID (APENAS EXEMPLOS - PRECISARÃO DOS SEUS ARQUIVOS)
+   REGRAS DE IMAGENS POR ID (Mantenha as suas URLs corretas)
    ======================================================= */
-#socrates-img { background-image: url('caminho/para/socrates.jpg'); }
-#platao-img { background-image: url('caminho/para/platao.jpg'); }
-/* ... (Adicione aqui as 22 regras restantes para as suas imagens) ... */
+#socrates-img { background-image: url('Imagem/Socrates.png'); }
+#platao-img { background-image: url('Imagem/Platao.png'); }
+#aristoteles-img { background-image: url('Imagem/Aristoteles.png'); }
+#heraclito-img { background-image: url('Imagem/Heraclito.png'); }
+#pitagoras-img { background-image: url('Imagem/Pitagoras.png'); }
+#epicuro-img { background-image: url('Imagem/Epicuro.png'); }
+#seneca-img { background-image: url('Imagem/Seneca.png'); }
+#cicero-img { background-image: url('Imagem/Cicero.png'); }
+#marcoaurelio-img { background-image: url('Imagem/Marco.png'); }
+#lucrecio-img { background-image: url('Imagem/Lucrecio.png'); }
+#plotino-img { background-image: url('Imagem/Plotino.png'); }
+#epicteto-img { background-image: url('Imagem/Epicteto.png'); }
+
 
 
 /* =======================================================
-   RESPONSIVIDADE DA PÁGINA PRODUTOS
+   RESPONSIVIDADE DA PÁGINA PRODUTOS (AJUSTADA)
    ======================================================= */
+@media (max-width: 1200px) {
+     .cartoes-container {
+        /* 3 colunas em telas menores que 1200px */
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
 @media (max-width: 992px) {
     .cartoes-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas no tablet */
+        /* Muda para 2 colunas no tablet */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
     }
 }
 
 @media (max-width: 600px) {
     .cartoes-container {
-        grid-template-columns: 1fr; /* 1 coluna no celular */
+        /* 1 coluna no celular */
+        grid-template-columns: 1fr; 
         gap: 15px;
     }
     .flip-card {
-        height: 200px; /* Reduz a altura dos cards no mobile */
+        /* Altura no mobile ajustada para 280px (mais estético para 1 coluna) */
+        height: 280px; 
     }
     .flip-card-front h4 {
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
     .flip-card-back .frase {
         font-size: 1.1em;
